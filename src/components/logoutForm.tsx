@@ -1,9 +1,10 @@
-import { logout } from "@/actions"
+import { logout } from '@/action'
+import React from 'react'
 
 const LogoutForm = () => {
   return (
     <form action={logout}>
-      <button>logout</button>
+      <button>Logout</button>
     </form>
   )
 }
