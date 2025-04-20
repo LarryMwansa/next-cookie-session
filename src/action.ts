@@ -8,6 +8,7 @@ import { revalidatePath } from "next/cache";
 
 let username = "John";
 let isPro = true;
+let isBlocked = true;
 
 export const getSession = async ()=>{
     
@@ -15,6 +16,11 @@ export const getSession = async ()=>{
     if(!session.isLoggedIn){
         session.isLoggedIn = defaultSession.isLoggedIn;
     }
+
+ // CHECK THE USER IN THE DB
+  session.isBlocked = isBlocked;
+  session.isPro = isPro;
+
     return session;
 }
 
